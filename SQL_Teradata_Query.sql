@@ -10,6 +10,6 @@ WHERE t.store IN (SELECT days_in_month.store
 				          EXTRACT(MONTH from salesdate) AS sales_month,
 				          store,
 				          COUNT (DISTINCT saledate) AS numdays
-				  FROM trnsact
-				  GROUP BY sales_year, sales_month, store
-				  HAVING numdays = 11) AS days_in_month)
+				   FROM trnsact
+				   GROUP BY sales_year, sales_month, store
+				   HAVING numdays = 11) AS days_in_month)
